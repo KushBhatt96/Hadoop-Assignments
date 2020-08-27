@@ -1,0 +1,8 @@
+MapReduce Job 1:
+$HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.7.6.jar -D mapred.reduce.tasks=2 -input /user/graph.txt -output /output_A2_Ex2_a/ -file mapper.py -file reducer.py -mapper mapper.py -reducer reducer.py
+
+MapReduce Job 2:
+$HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.7.6.jar -D mapred.reduce.tasks=2 -input /output_A2_Ex2_a -output /output_A2_Ex2_b/ -file mapper.py -file reducer.py -mapper mapper.py -reducer reducer.py
+
+MapReduce Job 3:
+$HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.7.6.jar -D mapred.reduce.tasks=2 -input /output_A2_Ex2_b -output /output_A2_Ex2_c/ -file mapper.py -file reducer.py -mapper mapper.py -reducer reducer.py

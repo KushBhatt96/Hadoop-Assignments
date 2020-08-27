@@ -1,0 +1,4 @@
+$HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.7.6.jar -input /user/Ex3_LargeFiles -output /output_A1_Ex3_Demo/ -file mapper.py -file reducer.py -mapper mapper.py -reducer reducer.py
+
+
+hadoop fs -getmerge /output_A1_Ex3_Demo/ resultDemo.txt && vi resultDemo.txt

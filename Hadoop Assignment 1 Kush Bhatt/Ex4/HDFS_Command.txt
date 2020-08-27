@@ -1,0 +1,3 @@
+$HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.7.6.jar -D map.output.key.field.separator=. -D mapred.text.key.partitioner.options=-k1,1 -D mapred.reduce.tasks=26 -input /user/shakespeare.txt -output /output_A1_Ex4_2/ -file mapper.py -file reducer.py -mapper mapper.py -reducer reducer.py -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner
+
+hadoop fs -getmerge /output_A1_Ex4_2/ result.out && cat result.out | sort > result_final.txt
